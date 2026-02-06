@@ -1,0 +1,49 @@
+{
+ "app": "metta",
+ "charts": [],
+ "content": "[{\"id\":\"oq-nf2riFc\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Landour Community Hospital</span>\",\"col\":12}},{\"id\":\"2pTFp7tJiH\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Patient Register\",\"col\":3}},{\"id\":\"Le2fTZqjW5\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Nurse Interventions\",\"col\":3}}]",
+ "creation": "2026-02-05 16:14:51.780984",
+ "custom_blocks": [],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "retail",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Home",
+ "link_type": "DocType",
+ "links": [],
+ "modified": "2026-02-06 07:41:57.868948",
+ "modified_by": "Administrator",
+ "module": "Metta",
+ "name": "Home",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [],
+ "sequence_id": 26.0,
+ "shortcuts": [
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Patient Register",
+   "link_to": "Patient Register",
+   "stats_filter": "[]",
+   "type": "DocType"
+  },
+  {
+   "color": "Grey",
+   "doc_view": "List",
+   "label": "Nurse Interventions",
+   "link_to": "Nurse Interventions",
+   "stats_filter": "[]",
+   "type": "DocType"
+  }
+ ],
+ "title": "Home",
+ "type": "Workspace"
+}

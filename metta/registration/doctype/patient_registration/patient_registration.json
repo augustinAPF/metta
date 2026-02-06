@@ -1,0 +1,160 @@
+{
+ "doctype": "DocType",
+ "name": "Patient Registration",
+ "module": "Registration",
+ "engine": "InnoDB",
+ "allow_rename": 0,
+ "track_changes": 1,
+ "naming_rule": "Expression (old style)",
+ "autoname": "REG-{YYYY}-{####}",
+ "field_order": [
+  "section_registration",
+  "patient",
+  "registration_date",
+  "registration_time",
+  "visit_type",
+  "department",
+  "doctor",
+  "is_emergency",
+  "is_revisit",
+  "section_fee",
+  "registration_fee",
+  "discount_percent",
+  "discount_amount",
+  "net_fee",
+  "is_paid",
+  "section_control",
+  "billing_category",
+  "status",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_registration",
+   "label": "📋 Registration Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "patient",
+   "label": "Patient",
+   "fieldtype": "Link",
+   "options": "Patient",
+   "reqd": 1
+  },
+  {
+   "fieldname": "registration_date",
+   "label": "Registration Date",
+   "fieldtype": "Date",
+   "default": "Today"
+  },
+  {
+   "fieldname": "registration_time",
+   "label": "Registration Time",
+   "fieldtype": "Time"
+  },
+  {
+   "fieldname": "visit_type",
+   "label": "Visit Type",
+   "fieldtype": "Select",
+   "options": "First Visit\nRevisit\nEmergency\nEmergency Revisit",
+   "reqd": 1
+  },
+  {
+   "fieldname": "department",
+   "label": "Department",
+   "fieldtype": "Link",
+   "options": "Department"
+  },
+  {
+   "fieldname": "doctor",
+   "label": "Doctor",
+   "fieldtype": "Link",
+   "options": "Staff"
+  },
+  {
+   "fieldname": "is_emergency",
+   "label": "Is Emergency",
+   "fieldtype": "Check",
+   "default": 0,
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_revisit",
+   "label": "Is Revisit",
+   "fieldtype": "Check",
+   "default": 0,
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_fee",
+   "label": "💰 Fee Details",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "registration_fee",
+   "label": "Registration Fee",
+   "fieldtype": "Currency"
+  },
+  {
+   "fieldname": "discount_percent",
+   "label": "Discount %",
+   "fieldtype": "Float",
+   "default": 0
+  },
+  {
+   "fieldname": "discount_amount",
+   "label": "Discount Amount",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_fee",
+   "label": "Net Fee",
+   "fieldtype": "Currency",
+   "read_only": 1
+  },
+  {
+   "fieldname": "is_paid",
+   "label": "Paid",
+   "fieldtype": "Check",
+   "default": 0
+  },
+  {
+   "fieldname": "section_control",
+   "label": "⚙️ Visit Control",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "billing_category",
+   "label": "Billing Category",
+   "fieldtype": "Link",
+   "options": "Billing Category"
+  },
+  {
+   "fieldname": "status",
+   "label": "Status",
+   "fieldtype": "Select",
+   "options": "Open\nCompleted\nCancelled",
+   "default": "Open"
+  },
+  {
+   "fieldname": "notes",
+   "label": "Notes",
+   "fieldtype": "Small Text"
+  }
+ ],
+ "permissions": [
+  {
+   "role": "System Manager",
+   "read": 1,
+   "write": 1,
+   "create": 1,
+   "delete": 0,
+   "report": 1,
+   "export": 1,
+   "print": 1,
+   "share": 1,
+   "email": 1
+  }
+ ]
+}
