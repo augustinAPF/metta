@@ -9,6 +9,7 @@
  "field_order": [
   "item",
   "item_name",
+  "item_type",
   "quantity",
   "rate",
   "amount"
@@ -18,7 +19,7 @@
    "fieldname": "item",
    "fieldtype": "Link",
    "in_list_view": 1,
-   "label": "Item (Medicine)",
+   "label": "Item",
    "options": "Item",
    "reqd": 1
   },
@@ -52,13 +53,22 @@
    "in_list_view": 1,
    "label": "Amount",
    "read_only": 1
+  },
+  {
+   "fetch_from": "item.item_type",
+   "fieldname": "item_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Item Type",
+   "options": "\nService\nConsumable\nAsset\nMedicine",
+   "read_only": 1
   }
  ],
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2026-02-07 06:00:17.686763",
+ "modified": "2026-02-07 06:37:23.594044",
  "modified_by": "Administrator",
  "module": "Metta",
  "name": "Patient Billing Medicine",

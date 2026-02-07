@@ -1,10 +1,5 @@
 Metta
 Registration
-Accounts
 Hospital Masters
-Billing
 Inpatient
-Inventory
-Reports
-Admin
 Billings

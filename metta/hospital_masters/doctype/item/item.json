@@ -44,7 +44,7 @@
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Item Type",
-   "options": "Service\nConsumable\nAsset",
+   "options": "Service\nConsumable\nAsset\nMedicine",
    "reqd": 1
   },
   {
@@ -90,7 +90,7 @@
  "grid_page_length": 50,
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2026-02-07 05:42:28.618365",
+ "modified": "2026-02-07 06:33:55.914887",
  "modified_by": "Administrator",
  "module": "Hospital Masters",
  "name": "Item",
