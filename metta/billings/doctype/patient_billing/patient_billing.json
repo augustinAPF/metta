@@ -1,102 +1,150 @@
 {
-  "doctype": "DocType",
-  "name": "Patient Billing",
-  "module": "Billings",
-  "custom": 0,
-  "autoname": "format:PB-.######",
-  "document_type": "Document",
-  "engine": "InnoDB",
-  "is_single": 0,
-  "is_submittable": 0,
-  "track_changes": 1,
-  "show_dashboard": 0,
-  "allow_import": 1,
-  "allow_events_in_timeline": 1,
-  "icon": "fa fa-file-invoice",
-  "title_field": "patient",
-  "search_fields": "patient,patient_name",
-  "sort_field": "creation",
-  "sort_order": "DESC",
-
-  "fields": [
-    {
-      "fieldname": "patient_section",
-      "fieldtype": "Section Break",
-      "label": "Patient Information"
-    },
-    {
-      "fieldname": "patient",
-      "fieldtype": "Link",
-      "label": "Patient (HIN)",
-      "options": "Patient Details",
-      "reqd": 1
-    },
-    {
-      "fieldname": "patient_name",
-      "fieldtype": "Data",
-      "label": "Patient Name",
-      "fetch_from": "patient.patient_name",
-      "read_only": 1
-    },
-
-    {
-      "fieldname": "medicine_section",
-      "fieldtype": "Section Break",
-      "label": "Medicines"
-    },
-    {
-      "fieldname": "medicine_items",
-      "fieldtype": "Table",
-      "label": "Medicine Charges",
-      "options": "Patient Billing Medicine"
-    },
-
-    {
-      "fieldname": "service_section",
-      "fieldtype": "Section Break",
-      "label": "Services"
-    },
-    {
-      "fieldname": "service_items",
-      "fieldtype": "Table",
-      "label": "Service Charges",
-      "options": "Patient Billing Service"
-    },
-
-    {
-      "fieldname": "totals_section",
-      "fieldtype": "Section Break",
-      "label": "Totals"
-    },
-    {
-      "fieldname": "total_medicine_amount",
-      "fieldtype": "Currency",
-      "label": "Total Medicine Amount",
-      "read_only": 1
-    },
-    {
-      "fieldname": "total_service_amount",
-      "fieldtype": "Currency",
-      "label": "Total Service Amount",
-      "read_only": 1
-    },
-    {
-      "fieldname": "grand_total",
-      "fieldtype": "Currency",
-      "label": "Grand Total",
-      "read_only": 1
-    }
-  ],
-
-  "permissions": [
-    {
-      "role": "System Manager",
-      "read": 1,
-      "write": 1,
-      "create": 1,
-      "delete": 1,
-      "print": 1,
-      "report": 1
-    }
-  ]
+ "actions": [],
+ "allow_events_in_timeline": 1,
+ "allow_import": 1,
+ "autoname": "format:PB-.######",
+ "creation": "2026-02-07 05:48:24.973054",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "patient_section",
+  "patient",
+  "patient_name",
+  "column_break_ylvz",
+  "billing_date",
+  "currency",
+  "medicine_section",
+  "medicine_items",
+  "totals_section",
+  "payment_mode",
+  "total_medicine_amount",
+  "total_service_amount",
+  "grand_total",
+  "column_break_lmru",
+  "net_amount",
+  "remarks"
+ ],
+ "fields": [
+  {
+   "fieldname": "patient_section",
+   "fieldtype": "Section Break",
+   "label": "Patient Information"
+  },
+  {
+   "fieldname": "patient",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Patient (HIN)",
+   "options": "Patient Details",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "patient.patient_name",
+   "fieldname": "patient_name",
+   "fieldtype": "Data",
+   "label": "Patient Name",
+   "read_only": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "billing_date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Billing Date",
+   "reqd": 1
+  },
+  {
+   "default": "INR",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "label": "Currency",
+   "options": "Currency"
+  },
+  {
+   "fieldname": "medicine_section",
+   "fieldtype": "Section Break",
+   "label": "Medicines"
+  },
+  {
+   "fieldname": "medicine_items",
+   "fieldtype": "Table",
+   "label": "Medicine Charges",
+   "options": "Patient Billing Medicine"
+  },
+  {
+   "fieldname": "totals_section",
+   "fieldtype": "Section Break",
+   "label": "Totals"
+  },
+  {
+   "fieldname": "total_medicine_amount",
+   "fieldtype": "Currency",
+   "label": "Total Medicine Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_service_amount",
+   "fieldtype": "Currency",
+   "label": "Total Service Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "net_amount",
+   "fieldtype": "Currency",
+   "label": "Net Amount Payable",
+   "read_only": 1
+  },
+  {
+   "fieldname": "remarks",
+   "fieldtype": "Small Text",
+   "label": "Remarks"
+  },
+  {
+   "fieldname": "column_break_ylvz",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_lmru",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "payment_mode",
+   "fieldtype": "Select",
+   "label": "Payment Mode",
+   "options": "\nCash\nUPI\nCard\nCredit"
+  }
+ ],
+ "icon": "fa fa-file-invoice",
+ "links": [],
+ "modified": "2026-02-07 05:57:52.849189",
+ "modified_by": "Administrator",
+ "module": "Billings",
+ "name": "Patient Billing",
+ "naming_rule": "Expression",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "write": 1
+  }
+ ],
+ "row_format": "Dynamic",
+ "search_fields": "patient,patient_name",
+ "sort_field": "creation",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "patient",
+ "track_changes": 1
 }
